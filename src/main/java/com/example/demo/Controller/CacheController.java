@@ -20,7 +20,7 @@ public class CacheController {
     @GetMapping(value = "/get-user-data")
     @ResponseBody
     public String getUserData(@RequestParam("id") int id) throws InterruptedException {
-        if(cache.has(id) == true){
+        if(cache.has(id)){
             return cache.get(id);
         }
         else {
